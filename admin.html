@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Smart City</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed; /* Add a background image */
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: rgb(12, 11, 11);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 60px); /* Full height minus header */
+            text-align: center;
+            color: #fff;
+        }
+
+        .auth-form {
+            background: rgba(18, 17, 17, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+            width: 300px; /* Fixed width for forms */
+        }
+
+        .auth-form h2 {
+            margin-bottom: 15px;
+        }
+
+        .auth-form label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .auth-form button {
+            background-color: #007BFF;
+            color: rgb(20, 19, 19);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .auth-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .admin-dashboard {
+            display: none;
+            text-align: center;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 80%; /* Full width for the dashboard */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SmartCity</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Admin Login/Signup Section -->
+    <section id="auth-section" class="auth-section">
+        <!-- Admin Login Form -->
+        <div id="admin-login-form" class="auth-form">
+            <h2>Admin Login</h2>
+            <form>
+                <label for="admin-username">Username:</label>
+                <input type="text" id="admin-username" required>
+
+                <label for="admin-password">Password:</label>
+                <input type="password" id="admin-password" required>
+
+                <button type="button" id="login-btn">Login</button>
+                <p>Don't have an account? <a href="#" id="show-admin-signup">Sign Up</a></p>
+            </form>
+        </div>
+
+        <!-- User Login Form -->
+        <div id="user-login-form" class="auth-form" style="display:none;">
+            <h2>User Login</h2>
+            <form>
+                <label for="user-username">Username:</label>
+                <input type="text" id="user-username" required>
+
+                <label for="user-password">Password:</label>
+                <input type="password" id="user-password" required>
+
+                <button type="button" id="user-login-btn">Login</button>
+                <p>Don't have an account? <a href="#" id="show-user-signup">Sign Up</a></p>
+            </form>
+        </div>
+
+        <!-- User Signup Form -->
+        <div id="user-signup-form" class="auth-form" style="display:none;">
+            <h2>User Sign Up</h2>
+            <form>
+                <label for="new-user-username">Username:</label>
+                <input type="text" id="new-user-username" required>
+
+                <label for="new-user-email">Email:</label>
+                <input type="email" id="new-user-email" required>
+
+                <label for="new-user-password">Password:</label>
+                <input type="password" id="new-user-password" required>
+
+                <button type="button" id="user-signup-btn">Sign Up</button>
+                <p>Already have an account? <a href="#" id="show-user-login">Login</a></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Section (hidden initially) -->
+    <section id="admin-dashboard" class="admin-dashboard" style="display:none;">
+        <h1>Admin Dashboard</h1>
+        <p>Manage place recommendations and user registrations.</p>
+        <button>Update Listings</button>
+        <button>View All Properties</button>
+
+        <h2>Registered Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>john_doe</td>
+                    <td>john@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>jane_smith</td>
+                    <td>jane@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SmartCity. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

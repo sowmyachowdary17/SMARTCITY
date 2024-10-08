@@ -1,0 +1,382 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('image1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #baa4a4;
+    padding: 10px 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #7a2121;
+    font-weight: bold;
+}
+.image-container {
+    text-align: center;
+    margin-top: 20px; /* Optional: Adjust the top margin as needed */
+}
+
+.image-container img {
+    display: inline-block;
+}
+
+
+/* CSS to add a background image */
+.hero-section {
+    background-image: url('image1.jpg'); /* Path to the image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    height: 200vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(15, 14, 14);
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    text-align: center;
+}
+
+.place {
+    margin: 20px 0;
+}
+
+.place img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.place p {
+    font-size: 1.1rem;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label, form input, form textarea, form button {
+    margin: 10px 0;
+}
+
+
+
+
+.mission-vision {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for contrast */
+    border-radius: 10px;
+}
+
+.box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.mission h2, .vision h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.mission p, .vision p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 100%; /* Full-width boxes on smaller screens */
+    }
+}
+
+/* Services Section */
+.services {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.services h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Container for service boxes */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Individual service box */
+.service-box {
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.service-box h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.service-box p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Service Images */
+.service-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* Styles for the Explore button */
+#exploreButton {
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#exploreButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Styles for the places container */
+#placesContainer {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Styles for the places list */
+#placesList {
+    list-style: none;
+    padding: 0;
+}
+
+/* Styles for individual list items */
+#placesList li {
+    margin: 15px 0; /* Adds vertical space between each place */
+}
+
+/* Styles for the place buttons */
+.place-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0; /* Additional spacing for buttons, if needed */
+}
+
+.place-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Styles for the images container */
+.images-container {
+    margin-top: 20px;
+}
+
+/* Styles for images */
+.place-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.place-img + p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Additional styles for mobile responsiveness */
+@media (max-width: 768px) {
+    .place-btn,
+    #exploreButton {
+        width: 100%; /* Full-width buttons on smaller screens */
+    }
+}
+/* Contact Section */
+.contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+}
+
+
+/* Contact Form Container */
+.contact-form-container {
+    background-color: rgba(81, 57, 146, 0.7); /* Semi-transparent black background for form */
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px; /* Maximum width for the form */
+    box-shadow: 0 4px 8px rgba(15, 15, 15, 0.2);
+    text-align: center; /* Center-align text */
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.cta-button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.register-section {
+    margin: 20px 0; /* Space above and below */
+}
+
+.register-button {
+    background-color: #007bff; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 20px; /* Larger font size */
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    margin: 10px 0; /* Space above the dropdown */
+    text-align: center; /* Center dropdown content */
+}
+
+.dropdown-content a {
+    display: block; /* Display each option as a block */
+    background-color: white; /* Background color */
+    color: black; /* Text color */
+    padding: 10px; /* Padding for dropdown items */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Round corners */
+    margin: 5px 0; /* Space between options */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Change background on hover */
+}
+
+/* Show the dropdown when toggled */
+.show {
+    display: block; /* Show the dropdown */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

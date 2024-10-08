@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Smartcity</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="user.html">User</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="login">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="username" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const userData = JSON.parse(localStorage.getItem('user'));
+
+            if (userData && userData.username === username && userData.password === password) {
+                alert('Login successful!');
+                window.location.href = 'user.html'; // Navigate to user dashboard
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

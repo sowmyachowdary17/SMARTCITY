@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Smart City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00aaff, #00ff99); /* Attractive gradient background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent header */
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00; /* Highlight color on hover */
+        }
+
+        .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1; /* Take remaining space */
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+
+        .user:hover {
+            transform: scale(1.02); /* Slight zoom effect */
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            color: #007bff; /* Primary color */
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        form {
+            width: 100%; /* Full width */
+            max-width: 400px; /* Maximum width */
+            margin: 20px auto;
+            padding: 20px;
+            background: #f8f8f8; /* Light background for forms */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #007bff; /* Primary button color */
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        #placesContainer {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #placesList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items */
+        }
+
+        .place-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0; /* Spacing between buttons */
+            width: 80%; /* Responsive button width */
+            font-size: 1.1em; /* Larger text */
+            transition: background-color 0.3s;
+        }
+
+        .place-btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .images-container img {
+            max-width: 200px;
+            height: auto;
+            margin: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .images-container img:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        #exploreButton {
+            background-color: #28a745; /* Green button color */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 20px; /* Spacing from other elements */
+        }
+
+        #exploreButton:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="user">
+        <h1>User Dashboard</h1>
+        <p>View places and submit your details for personalized recommendations.</p>
+        <form id="userForm">
+            <label for="userProperty">Your Name:</label>
+            <input type="text" id="userProperty" name="userProperty" required>
+
+            <label for="userRequest">Your Details:</label>
+            <textarea id="userRequest" name="userRequest" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Explore Button -->
+        <button id="exploreButton" onclick="window.location.href='explore.html'">Explore Places</button>
+
+        <!-- Container to display places -->
+        <div id="placesContainer">
+            <h2>Explore Places</h2>
+            <ul id="placesList">
+                <li><button class="place-btn" data-place="hyderabad">Hyderabad</button></li>
+                <li><button class="place-btn" data-place="chennai">Chennai</button></li>
+                <li><button class="place-btn" data-place="nellore">Nellore</button></li>
+                <li><button class="place-btn" data-place="bangalore">Bangalore</button></li>
+                
+            </ul>
+
+            <!-- Images section to display the selected place images -->
+            <div id="placeImages" class="images-container"></div>
+        </div>
+    </section>
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>

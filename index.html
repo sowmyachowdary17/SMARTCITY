@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCity - Add Value to Indian Middle-Class Properties</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleRegisterOptions() {
+            const registerOptions = document.getElementById('registerOptions');
+            registerOptions.classList.toggle('show');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.register-button')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SmartCity</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to SmartCity</h1>
+        <p>A web-based platform that provides comprehensive information and services for city newcomers, including tourism, accommodation, transportation, healthcare, and more.</p>
+        
+        <div class="register-section">
+            <button class="register-button" onclick="toggleRegisterOptions()">Register</button>
+            <div class="dropdown-content" id="registerOptions">
+                <a href="admin.html">Admin</a>
+                <a href="user.html">User</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-container">
+        <img src="logo.jpg" alt="smartcity logo" width="500" height="300">
+    </div>
+
+  
+</body>
+</html>
